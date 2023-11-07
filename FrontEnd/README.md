@@ -1,8 +1,24 @@
-# React + Vite
+# Spam Detecting Web App 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application built with Vite.js for spam detection. The project is set up with CI/CD integration using Vercel for the frontend deployment and uses Prettier for code formatting.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started with the project, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Tholkappiar/Spamurai.git
+   ```
+   ```bash
+   cd Spamurai
+2. **Install Dependencies**:
+    ```bash
+    npm install
+3. **Run the Development Server**:
+     ```bash
+     npm run dev
+## Code Formatting with Prettier
+1. **Format the code using the following command**:
+     ```bash
+     npm run format
