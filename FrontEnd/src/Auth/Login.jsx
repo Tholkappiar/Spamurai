@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import '../Assets/CSS/Login.css';
-import logo from '../Assets/images/mountain and bird/bird-black.png';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import "../Assets/CSS/Login.css";
+import logo from "../Assets/images/mountain and bird/bird-black.png";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   // Regex
@@ -10,8 +10,8 @@ function Login() {
   const passwordRegex = /^.{8,}$/;
 
   // useState
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
   const [flag, setFlag] = useState(false);
@@ -41,29 +41,34 @@ function Login() {
     checkEmail();
     checkPassword();
 
-    if (emailValid && passwordValid && email.trim() !== '' && password.trim() !== '') {
+    if (
+      emailValid &&
+      passwordValid &&
+      email.trim() !== "" &&
+      password.trim() !== ""
+    ) {
       try {
         const formData = {
           email: email,
           password: password,
         };
 
-        const response = await axios.post('http://localhost:8080/api/v1/auth/login', formData);
+        const response = await axios.post("link", formData);
         console.log(response);
 
         if (response.status === 200) {
           // Handle login success here.
-          console.log('Login success');
+          console.log("Login success");
         } else {
           // Handle invalid login.
-          console.log('Invalid login');
+          console.log("Invalid login");
         }
       } catch (error) {
         // Handle any errors that occur during the request.
-        console.error('An error occurred:', error);
+        console.error("An error occurred:", error);
 
         // Handle invalid login.
-        console.log('Invalid login');
+        console.log("Invalid login");
       }
     }
   };
@@ -81,7 +86,10 @@ function Login() {
         <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={handleOnSubmit}>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -94,12 +102,19 @@ function Login() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              {!emailValid && flag !== false ? <span style={{ color: 'red' }}>Invalid Email</span> : ''}
+              {!emailValid && flag !== false ? (
+                <span style={{ color: "red" }}>Invalid Email</span>
+              ) : (
+                ""
+              )}
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Password
                 </label>
               </div>
@@ -114,7 +129,11 @@ function Login() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              {!passwordValid && flag !== false ? <span style={{ color: 'red' }}>Invalid Password</span> : ''}
+              {!passwordValid && flag !== false ? (
+                <span style={{ color: "red" }}>Invalid Password</span>
+              ) : (
+                ""
+              )}
             </div>
 
             <div>
@@ -128,8 +147,11 @@ function Login() {
           </form>
 
           <p className="mt-5 text-center text-sm text-black-500">
-            Not yet Registered?{' '}
-            <a href="/sign-up" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            Not yet Registered?{" "}
+            <a
+              href="/sign-up"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
               Sign up
             </a>
           </p>

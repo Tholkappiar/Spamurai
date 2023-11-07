@@ -37,10 +37,21 @@ const Footer = () => {
         </div>
         <div className="lg:col-span-2 flex justify-between mt-6">
           <div>
-            <h6 className="font-medium text-gray-400" onClick={() => { Nav("/AdminLogin") }}>Admin</h6>
+            <h6
+              className="font-medium text-gray-400"
+              onClick={() => {
+                Nav("/AdminLogin");
+              }}
+            >
+              Admin
+            </h6>
             <ul>
-              <li className="py-2 text-sm"><Footer_Policy /></li>
-              <li><Footer_Terms /></li>
+              <li className="py-2 text-sm">
+                <Footer_Policy />
+              </li>
+              <li>
+                <Footer_Terms />
+              </li>
             </ul>
           </div>
           <div className="flex justify-between md:w-[75%] my-6">
